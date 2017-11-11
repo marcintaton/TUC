@@ -4,8 +4,16 @@ public class Signal: element {
 
         if (test(value)) {
 
-            output = new int[1];
+            output = new int[2];
             output[0] = value;
+
+            if (value == 1) {
+                output[1] = 0;
+            }
+            else {
+                output[1] = 1;
+            }
+            
             is_initiated = 1;            
         }
     }

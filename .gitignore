@@ -1,2 +1,4 @@
 *.exe
 main.exe
+*.sh
+compile.sh

@@ -1,14 +1,15 @@
 public class And: element {
 
-    public And(int in_0, int in_1) {
+    public And(params int[] values) {
 
-        if (test(in_0, in_1)) {
+        if (test(values)) {
 
-            input = new int[2];
+            input = new int[values.Length];
             output = new int[1];
 
-            input[0] = in_0;
-            input[1] = in_1;
+            for (int i = 0; i < values.Length; i++) {
+                input[i] = values[i];
+            }
 
             calculate();
             is_initiated = 1;
@@ -17,11 +18,11 @@ public class And: element {
 
     private void calculate () {
 
-        if (input[0] == 1 && input[1] == 1) {
-            output[0] = 1;
-        }
-        else {
-            output[0] = 0;
+        output[0] = 1;
+        for (int i = 0; i < input.Length; i++) {
+            if (input[i] == 0) {
+                output[0] = 0;
+            }
         }
     }
 
