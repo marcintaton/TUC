@@ -3,9 +3,13 @@ class mainclass {
     static void Main() {
 
         //Sygnały
+        System.Console.Write("x1 = ");
         Signal x1 = new Signal(System.Convert.ToInt32(System.Console.ReadLine()));
+        System.Console.Write("x2 = ");
         Signal x2 = new Signal(System.Convert.ToInt32(System.Console.ReadLine()));
+        System.Console.Write("x3 = ");
         Signal x3 = new Signal(System.Convert.ToInt32(System.Console.ReadLine()));
+        System.Console.Write("x4 = ");
         Signal x4 = new Signal(System.Convert.ToInt32(System.Console.ReadLine()));
 
         //Bramki
@@ -18,6 +22,8 @@ class mainclass {
 
         //Wynik
         System.Console.WriteLine("F = {0}", mux1.result(0));
+
+        System.Console.ReadLine();
 
         
     }
