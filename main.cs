@@ -2,6 +2,7 @@ class mainclass {
 
     static void Main() {
 
+        
         //Sygnały
         System.Console.Write("x1 = ");
         Signal x1 = new Signal(System.Convert.ToInt32(System.Console.ReadLine()));
@@ -14,18 +15,19 @@ class mainclass {
 
         //Bramki
 
-        Nand nand1 = new Nand(x3.result(0), x4.result(1));
-        Nand nand2 = new Nand(x3.result(1), x4.result(0));
-        Nand nand3 = new Nand(nand1.result(0), nand2.result(0));
-        Not not1 = new Not(nand2.result(0));
-        Multiplexer mux1 = new Multiplexer(4, 0, 0, x1.result(0), x2.result(0), not1.result(0), nand3.result(0), 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+        //Nand nand1 = new Nand(x3.result(0), x4.result(1));
+        //Nand nand2 = new Nand(x3.result(1), x4.result(0));
+        //Nand nand3 = new Nand(nand1.result(0), nand2.result(0));
+        //Not not1 = new Not(nand2.result(0));
+        //Multiplexer mux1 = new Multiplexer(4, 0, 0, x1.result(0), x2.result(0), not1.result(0), nand3.result(0), 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+        Demultiplexer dmux1 = new Demultiplexer(0, x1.result(0), x2.result(0), x3.result(0), x4.result(0));
 
         //Wynik
-        System.Console.WriteLine("F = {0}", mux1.result(0));
+        System.Console.WriteLine("F = {0}", dmux1.result(6));
 
         System.Console.ReadLine();
-
+        
         
     }
 
-}
+};
